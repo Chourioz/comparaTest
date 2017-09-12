@@ -1,4 +1,4 @@
-#Compara Test
+#ComparaTest
 
 * Descargar la carpeta pokerTest.
 
@@ -8,10 +8,14 @@
 
 * Introducir el comando:
 
-  $ npm install
+  ```
+    $ npm install
+  ```
 
 * Levantar la pagina con el comando:
 
-  $ npm start
+  ```
+    $ npm start
+  ```
 
-  * Acceder a la ruta localhost:8080 desde cualquier navegador.
+* Acceder a la ruta localhost:8080 desde cualquier navegador.
