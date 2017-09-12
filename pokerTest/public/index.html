@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="pokerApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Poker Game</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <script src="js/controllers/appController.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body ng-controller="pokerController">
+    <div ng-if="!game" style="text-align: center">
+      <h1>WELCOME TO POKER GAME ♣</h1>
+    </div>
+    <div ng-if="game">
+      <div ng-repeat="user in users">
+        <h2>{{user.name}}</h2>
+        <div style="display: inline-flex !important;">
+          <div ng-repeat="card in user.cards">
+            <h1>{{card.symbol}}
+            {{card.number}}&nbsp;	&nbsp;</h1>
+          </div>
+        </div>
+      </div>
+      <br><h2>Table</h2>
+      <div style="display: inline-flex !important;">
+        <div ng-repeat="card in table">
+          <h1>{{card.symbol}}
+          {{card.number}}&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+        </div>
+      </div>
+      <div ng-if="result">
+        <h1>Winner: {{player}}</h1><br>
+        <h2>Combination: {{result}}</h2>
+      </div>
+    </div>
+    <div style="text-align: center">
+      <button ng-hide="game" class="btn btn-primary" ng-click="play()">Play</button>
+      <button ng-hide="!game" class="btn btn-primary" ng-click="play(); clean()">Play Again</button>
+      <button ng-hide="!game" class="btn btn-secondary" ng-click="deal()">Deal</button>
+    </div>
+  </body>
+</html>
