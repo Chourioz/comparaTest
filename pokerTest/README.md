@@ -1,4 +1,4 @@
-#ComparaTest
+# Compara Test
 
 * Descargar la carpeta pokerTest.
 
